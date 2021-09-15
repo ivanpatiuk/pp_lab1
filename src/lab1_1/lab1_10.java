@@ -43,7 +43,7 @@ public class lab1_10 {
             "\nSunny: " + sunny +"\nRaining: " + raining +"\nCloud: "+cloud+"\n");
         }
     }
-    public static void printForecast(Day[] forecast){
+    public static void printForecast(final Day[] forecast){
         for (Day i : forecast){
             System.out.println(i.toString());
         }

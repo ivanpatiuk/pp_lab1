@@ -1,13 +1,13 @@
 package lab1_1;
 
 public class lab1_6 {
-    public static void fullMatrix(int[][] matrix, int rows, int columns) {
+    public static void fullMatrix(int[][] matrix, final int rows, final int columns) {
         for (int i = 0; i < rows; ++i)
             for (int k = 0; k < columns; ++k) {
                 matrix[i][k] = i + k + 1;
             }
     }
-    public static void printMatrix(int[][] matrix, int rows, int columns){
+    public static void printMatrix(int[][] matrix, final int rows, final int columns){
         for (int i = 0; i < rows; ++i) {
             System.out.println();
             for (int k = 0; k < columns; ++k) {
@@ -16,7 +16,7 @@ public class lab1_6 {
         }
         System.out.println();
     }
-    public static int[][] multMatrix(int[][] matrix1, int[][] matrix2) {
+    public static int[][] multMatrix(final int[][] matrix1, final int[][] matrix2) {
         if(matrix1[0].length!=matrix2.length)
             return null;
         int m1ColLength = matrix1[0].length;

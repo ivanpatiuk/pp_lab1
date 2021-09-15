@@ -1,7 +1,7 @@
 package lab1_1;
 
 public class lab1_3 {
-    public static String merge(int[] intArray, char[] charArray) {
+    public static String merge(final int[] intArray, final char[] charArray) {
         String string = "";
         for (int i = 0; i < Math.max(intArray.length, charArray.length); ++i) {
             if (i < intArray.length)

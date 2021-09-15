@@ -12,8 +12,6 @@ public class lab1_4 {
             else
                 System.out.print(i);
             System.out.print(" ");
-            if(i%20==0)
-                System.out.println();
         }
     }
 }

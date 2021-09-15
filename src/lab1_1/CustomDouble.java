@@ -2,7 +2,7 @@
 //
 package lab1_1;
 
-public class CustomDouble{
+public class CustomDouble {
     public int anInt;
     public double aDouble;
 
@@ -10,9 +10,18 @@ public class CustomDouble{
         anInt = 0;
         aDouble = 0;
     }
+
     public CustomDouble(int anInt, double aDouble) {
         this.anInt = anInt;
-        this.aDouble = aDouble;
+        if (aDouble >= 1) {
+            if (this.anInt < 0)
+                this.anInt -= Math.abs(aDouble / 1);
+            else
+                this.anInt += Math.abs(aDouble / 1);
+            this.aDouble += Math.abs(aDouble % 1);
+
+        } else
+            this.aDouble = aDouble;
     }
 
     public double toDouble() {
@@ -74,13 +83,18 @@ public class CustomDouble{
     }
 
     @Override
-    public int hashCode(){ return this.anInt+(int)(10000* this.aDouble)+27; }
+    public int hashCode() {
+        return this.anInt + (int) (10000 * this.aDouble) + 27;
+    }
 
-    public void sout(){
+    public void sout() {
+        System.out.println(this.toDouble());
         System.out.println(anInt + "," + aDouble);
     }
+
     public static void main(String[] args) {
-        CustomDouble a = new CustomDouble(-3, 0.5);
+        CustomDouble a = new CustomDouble(-4, 0.2);
+        System.out.println(a.toDouble());
         CustomDouble b = new CustomDouble(5, 0.6);
         a.plus(b);
         a.sout();
@@ -88,13 +102,13 @@ public class CustomDouble{
         CustomDouble d = new CustomDouble(6, 0.2);
         c.minus(d);
         c.sout();
-        CustomDouble a1 = new CustomDouble(1,0.6);
-        CustomDouble b1 = new CustomDouble(1,0.6);
-        if(a.moreEqualThan(b))
+        CustomDouble a1 = new CustomDouble(1, 0.6);
+        CustomDouble b1 = new CustomDouble(1, 0.6);
+        if (a.moreEqualThan(b))
             System.out.println("true1");
-        if(c.lessThan(d))
+        if (c.lessThan(d))
             System.out.println("true2");
-        if(a1.equals(b1))
+        if (a1.equals(b1))
             System.out.println("true3");
     }
 }

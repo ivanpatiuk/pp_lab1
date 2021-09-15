@@ -1,7 +1,7 @@
 package lab1_1;
 
 public class lab1_2 {
-    public static int countChars(String str, char ch){
+    public static int countChars(final String str, final char ch){
         int n = 0;
         for (int i = 0; i < str.length(); i++) {
             if (str.charAt(i)==ch)
