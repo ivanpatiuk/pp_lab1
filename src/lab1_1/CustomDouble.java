@@ -40,8 +40,11 @@ public class CustomDouble {
     }
 
     public void minus(final CustomDouble obj) {
-        obj.anInt = -obj.anInt;
-        this.plus(obj);
+        double result = this.toDouble();
+        double tmp = obj.toDouble();
+        result -= tmp;
+        this.anInt = (int) result;
+        this.aDouble = Math.abs(result - this.anInt);
     }
 
     public boolean moreThan(final CustomDouble obj) {
@@ -55,31 +58,19 @@ public class CustomDouble {
         if (this.getClass() != obj.getClass())
             return false;
         final CustomDouble object = (CustomDouble) obj;
-        if (this.anInt == object.anInt && this.aDouble == object.aDouble)
-            return true;
-        else
-            return false;
+        return this.anInt == object.anInt && this.aDouble == object.aDouble;
     }
 
     public boolean moreEqualThan(final CustomDouble obj) {
-        if (this.moreThan(obj) | this.equals(obj))
-            return true;
-        else
-            return false;
+        return this.moreThan(obj) | this.equals(obj);
     }
 
     public boolean lessThan(final CustomDouble obj) {
-        if (!(this.moreThan(obj)))
-            return true;
-        else
-            return false;
+        return !this.moreThan(obj);
     }
 
     public boolean lessEqualThan(final CustomDouble obj) {
-        if (!(this.moreEqualThan(obj)))
-            return true;
-        else
-            return false;
+        return this.lessThan(obj) | this.equals(obj);
     }
 
     @Override
@@ -89,14 +80,12 @@ public class CustomDouble {
 
     public void sout() {
         System.out.println(this.toDouble());
-        System.out.println(anInt + "," + aDouble);
     }
 
     public static void main(String[] args) {
-        CustomDouble a = new CustomDouble(-4, 0.2);
-        System.out.println(a.toDouble());
-        CustomDouble b = new CustomDouble(5, 0.6);
-        a.plus(b);
+        CustomDouble a = new CustomDouble(1, 0.6);
+        CustomDouble b = new CustomDouble(0, 0.7);
+        a.minus(b);
         a.sout();
         CustomDouble c = new CustomDouble(-3, 0.7);
         CustomDouble d = new CustomDouble(6, 0.2);

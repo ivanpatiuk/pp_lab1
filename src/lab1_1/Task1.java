@@ -1,6 +1,6 @@
 package lab1_1;
 
-public class Main {
+public class Task1 {
     public static void sort(String[] string) {
         for (int i = 0; i < string.length; ++i) {
             for (int k = 0; k < string.length - 1; ++k) {
@@ -24,6 +24,5 @@ public class Main {
         sort(array);
         for (String str : array)
             System.out.println(str);
-
     }
 }

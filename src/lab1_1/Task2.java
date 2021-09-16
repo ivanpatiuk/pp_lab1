@@ -1,6 +1,6 @@
 package lab1_1;
 
-public class lab1_2 {
+public class Task2 {
     public static int countChars(final String str, final char ch){
         int n = 0;
         for (int i = 0; i < str.length(); i++) {

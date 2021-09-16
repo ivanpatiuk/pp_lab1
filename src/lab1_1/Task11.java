@@ -2,7 +2,7 @@ package lab1_1;
 
 import java.util.LinkedList;
 
-public class lab1_11 {
+public class Task11 {
     public static class Car {
         private String mark;
 
@@ -17,6 +17,15 @@ public class lab1_11 {
         private String firstName;
         private String lastName;
         private int age;
+
+        public String getFirstName() { return firstName; }
+        public void setFirstName(String firstName) { this.firstName = firstName; }
+
+        public String getLastName() { return lastName; }
+        public void setLastName(String lastName) { this.lastName = lastName; }
+
+        public int getAge() { return age; }
+        public void setAge(int age) { this.age = age; }
 
         public Driver() { }
         public Driver(String s1, String s2, int age) {
@@ -44,9 +53,7 @@ public class lab1_11 {
             this.available = available;
         }
 
-        public Taxi() {
-        }
-
+        public Taxi() { }
         public Taxi(Car car) {
             this.car = car;
         }
@@ -59,7 +66,6 @@ public class lab1_11 {
         public Car getCar() {
             return car;
         }
-
         public void setCar(Car car) {
             this.car = car;
         }
@@ -67,13 +73,13 @@ public class lab1_11 {
         public LinkedList<Driver> getDrivers() {
             return drivers;
         }
+        public void setDrivers(LinkedList<Driver> list) { drivers = list; }
 
         public void addDriver(Driver driver) {
             drivers.add(driver);
         }
-
         public void removeDriver(Driver driver) {
-            drivers.add(driver);
+            drivers.remove(driver);
         }
 
         @Override

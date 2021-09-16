@@ -1,16 +1,18 @@
 package lab1_1;
 
-public class lab1_6 {
-    public static void fullMatrix(int[][] matrix, final int rows, final int columns) {
-        for (int i = 0; i < rows; ++i)
-            for (int k = 0; k < columns; ++k) {
+public class Task6 {
+    public static void fillInMatrix(int[][] matrix) {
+        for (int i = 0; i < matrix.length; ++i)
+            for (int k = 0; k < matrix[0].length; ++k) {
                 matrix[i][k] = i + k + 1;
             }
     }
-    public static void printMatrix(int[][] matrix, final int rows, final int columns){
-        for (int i = 0; i < rows; ++i) {
+    public static void printMatrix(final int[][] matrix){
+        if (matrix==null)
+            return;
+        for (int i = 0; i < matrix.length; ++i) {
             System.out.println();
-            for (int k = 0; k < columns; ++k) {
+            for (int k = 0; k < matrix[0].length; ++k) {
                 System.out.print(matrix[i][k] + " ");
             }
         }
@@ -36,11 +38,11 @@ public class lab1_6 {
     public static void main(String[] args) {
         int[][] a = new int[3][2];
         int[][] b = new int[2][5];
-        fullMatrix(a,a.length,a[0].length);
-        fullMatrix(b,b.length,b[0].length);
-        printMatrix(a,a.length,a[0].length);
-        printMatrix(b,b.length,b[0].length);
+        fillInMatrix(a);
+        fillInMatrix(b);
+        printMatrix(a);
+        printMatrix(b);
         int[][] c = multMatrix(a,b);
-        printMatrix(c,c.length,c[0].length);
+        printMatrix(c);
     }
 }

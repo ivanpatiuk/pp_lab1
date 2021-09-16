@@ -1,15 +1,15 @@
 package lab1_1;
 
-public class lab1_3 {
+public class Task3 {
     public static String merge(final int[] intArray, final char[] charArray) {
-        String string = "";
+        StringBuilder result = new StringBuilder();
         for (int i = 0; i < Math.max(intArray.length, charArray.length); ++i) {
             if (i < intArray.length)
-                string += intArray[i];
+                result.append(intArray[i]);
             if (i < charArray.length)
-                string += charArray[i];
+                result.append(charArray[i]);
         }
-        return string;
+        return result.toString();
 
 }
     public static void main(String[] args) {

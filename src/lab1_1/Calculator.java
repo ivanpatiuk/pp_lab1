@@ -1,6 +1,6 @@
 package lab1_1;
 
-public class lab1_9 {
+public class Calculator {
     private static <T extends Number> double sum(final T firstNumber, final T secondNumber) {
         return firstNumber.doubleValue() + secondNumber.doubleValue();
     }

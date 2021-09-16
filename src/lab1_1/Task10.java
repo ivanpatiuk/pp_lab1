@@ -1,6 +1,6 @@
 package lab1_1;
 
-public class lab1_10 {
+public class Task10 {
     public static class Weather{
         public double temperature;
         public double chanceOfRain;
@@ -24,7 +24,7 @@ public class lab1_10 {
             this.cloud=cloud;
         }
     }
-    enum Days{ MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY,SATURDAY, SUNDAY };
+    enum Days{ MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY,SATURDAY, SUNDAY }
 
     public static class Day extends Weather{
         public Day(){
