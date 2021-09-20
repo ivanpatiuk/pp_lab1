@@ -97,6 +97,8 @@ public class Task11 {
     }
 
         public static class Order {
+            public Order(Taxi taxi) { this.taxi = taxi; }
+
             Taxi taxi;
             public Order() {}
 

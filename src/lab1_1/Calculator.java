@@ -1,25 +1,25 @@
 package lab1_1;
 
 public class Calculator {
-    private static <T extends Number> double sum(final T firstNumber, final T secondNumber) {
+    public static <T extends Number> double sum(final T firstNumber, final T secondNumber) {
         return firstNumber.doubleValue() + secondNumber.doubleValue();
     }
 
-    private static <T extends Number> double diff(final T firstNumber, final T secondNumber) {
+    public static <T extends Number> double diff(final T firstNumber, final T secondNumber) {
         return firstNumber.doubleValue() - secondNumber.doubleValue();
     }
-   private static <T extends Number> double mltp(final T firstNumber, final T secondNumber) {
+    public static <T extends Number> double mltp(final T firstNumber, final T secondNumber) {
       return firstNumber.doubleValue() * secondNumber.doubleValue();
    }
-   private static <T extends Number> double devide(final T firstNumber, final T secondNumber) {
+    public static <T extends Number> double devide(final T firstNumber, final T secondNumber) {
       return firstNumber.doubleValue() / secondNumber.doubleValue();
    }
 
-    private static double mltp(final CustomDouble firstNumber, final CustomDouble secondNumber) {
+    public static double mltp(final CustomDouble firstNumber, final CustomDouble secondNumber) {
         return firstNumber.toDouble() * secondNumber.toDouble();
     }
 
-    private static double devide(final CustomDouble firstNumber, final CustomDouble secondNumber) {
+    public static double devide(final CustomDouble firstNumber, final CustomDouble secondNumber) {
        return firstNumber.toDouble() / secondNumber.toDouble();
     }
     public static void main(String[] args) {
