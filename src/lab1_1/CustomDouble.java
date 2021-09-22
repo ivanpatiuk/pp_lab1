@@ -66,7 +66,7 @@ public class CustomDouble {
     }
 
     public boolean lessThan(final CustomDouble obj) {
-        return !this.moreThan(obj);
+        return !this.moreThan(obj) && !this.equals(obj);
     }
 
     public boolean lessEqualThan(final CustomDouble obj) {
