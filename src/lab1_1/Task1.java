@@ -20,7 +20,6 @@ public class Task1 {
         array[2] = "Washington";
         array[3] = "London";
         array[4] = "York";
-
         sort(array);
         for (String str : array)
             System.out.println(str);

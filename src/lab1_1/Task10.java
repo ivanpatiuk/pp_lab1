@@ -4,7 +4,6 @@ public class Task10 {
     public static class Weather{
         public double temperature;
         public double chanceOfRain;
-
         public boolean sunny;
         public boolean raining;
         public boolean cloud;

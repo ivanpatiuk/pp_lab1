@@ -6,17 +6,24 @@ public class Task11 {
     public static class Car {
         private String mark;
 
-        public String getMark() { return mark; }
-        public void setMark(String mark) { this.mark = mark; }
-
         public Car() { }
         public Car(String str) { mark = str; }
+
+        public String getMark() { return mark; }
+        public void setMark(String mark) { this.mark = mark; }
     }
 
     public static class Driver {
         private String firstName;
         private String lastName;
         private int age;
+
+        public Driver() { }
+        public Driver(String s1, String s2, int age) {
+            firstName = s1;
+            lastName = s2;
+            this.age = age;
+        }
 
         public String getFirstName() { return firstName; }
         public void setFirstName(String firstName) { this.firstName = firstName; }
@@ -26,13 +33,6 @@ public class Task11 {
 
         public int getAge() { return age; }
         public void setAge(int age) { this.age = age; }
-
-        public Driver() { }
-        public Driver(String s1, String s2, int age) {
-            firstName = s1;
-            lastName = s2;
-            this.age = age;
-        }
 
         @Override
         public String toString() {
@@ -45,22 +45,19 @@ public class Task11 {
         private boolean available = true;
         private LinkedList<Driver> drivers = new LinkedList<>();
 
-        public boolean isAvailable() {
-            return available;
-        }
-
-        public void setAvailable(boolean available) {
-            this.available = available;
-        }
-
         public Taxi() { }
         public Taxi(Car car) {
             this.car = car;
         }
-
         public Taxi(Car car, LinkedList<Driver> driversList) {
             this.car = car;
             drivers = driversList;
+        }
+        public boolean isAvailable() {
+            return available;
+        }
+        public void setAvailable(boolean available) {
+            this.available = available;
         }
 
         public Car getCar() {
@@ -97,10 +94,9 @@ public class Task11 {
     }
 
         public static class Order {
-            public Order(Taxi taxi) { this.taxi = taxi; }
-
             Taxi taxi;
             public Order() {}
+            public Order(Taxi taxi) { this.taxi = taxi; }
 
             public void makeOrder(Taxi taxi) { taxi.setAvailable(false); }
             public void freeOrder() { taxi.setAvailable(true); }
@@ -116,11 +112,8 @@ public class Task11 {
             taxi.addDriver(driver2);
             taxi.addDriver(driver3);
             System.out.println(taxi.toString());
-
             Order order = new Order();
             order.makeOrder(taxi);
-
             System.out.println(taxi.isAvailable());
-
         }
 }
